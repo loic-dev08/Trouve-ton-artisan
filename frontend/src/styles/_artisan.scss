@@ -1,0 +1,188 @@
+// ── Fiche artisan (ArtisanPage) ───────────────────────
+
+.artisan-page {
+  .page-title {
+    font-size: $font-size-xl;
+    color: $color-blue-dark;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+// Profil en haut de la fiche
+.artisan-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-xl;
+  flex-wrap: wrap;
+
+  &__avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $color-blue-dark, $color-blue-light);
+    color: $color-white;
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    @media (max-width: $bp-sm) {
+      width: 72px;
+      height: 72px;
+      font-size: $font-size-2xl;
+    }
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__name {
+    font-size: $font-size-2xl;
+    font-weight: 800;
+    color: $color-blue-dark;
+    margin-bottom: $spacing-xs;
+
+    @media (max-width: $bp-sm) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__specialty {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $color-blue-medium;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__category {
+    font-weight: 400;
+    color: $color-gray-text;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    color: $color-gray-text;
+    margin-top: $spacing-sm;
+
+    svg { color: $color-blue-light; }
+  }
+
+  &__website {
+    margin-top: $spacing-md;
+  }
+}
+
+// Section "À propos"
+.artisan-about {
+  line-height: 1.8;
+  color: $color-text;
+}
+
+// Formulaire de contact
+.contact-form {
+  .form-label {
+    font-weight: 600;
+    color: $color-blue-dark;
+  }
+
+  .form-control {
+    border-color: $color-gray-mid;
+    border-radius: $border-radius-md;
+
+    &:focus {
+      border-color: $color-blue-light;
+      box-shadow: 0 0 0 3px rgba(58, 173, 222, 0.25);
+    }
+  }
+
+  .btn-primary {
+    background-color: $color-blue-light;
+    border-color: $color-blue-light;
+    font-weight: 600;
+    padding: $spacing-sm $spacing-xl;
+    border-radius: $border-radius-md;
+
+    &:hover,
+    &:focus-visible {
+      background-color: darken($color-blue-light, 8%);
+      border-color: darken($color-blue-light, 8%);
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(58, 173, 222, 0.5);
+    }
+  }
+}
+
+// Titres de sous-sections
+.section-title--small {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: $color-blue-dark;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-sm;
+  border-bottom: 3px solid $color-blue-light;
+  display: inline-block;
+}
+
+// Pages légales
+.legal-page {
+  min-height: 50vh;
+
+  h1 {
+    color: $color-blue-dark;
+    font-size: $font-size-2xl;
+    font-weight: 800;
+    margin-bottom: $spacing-lg;
+  }
+
+  .legal-placeholder {
+    color: $color-gray-text;
+    font-size: $font-size-lg;
+    background: $color-gray-light;
+    padding: $spacing-xl;
+    border-radius: $border-radius-lg;
+    border-left: 4px solid $color-blue-light;
+  }
+}
+
+// Page 404
+.not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__illustration {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: 800;
+    color: $color-blue-dark;
+    margin-bottom: $spacing-md;
+  }
+
+  &__message {
+    color: $color-gray-text;
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__btn {
+    background-color: $color-blue-light;
+    border-color: $color-blue-light;
+    padding: $spacing-sm $spacing-xl;
+    font-weight: 600;
+    border-radius: $border-radius-md;
+
+    &:hover { background-color: darken($color-blue-light, 8%); }
+  }
+}

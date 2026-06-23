@@ -1,0 +1,64 @@
+// ── Footer ───────────────────────────────────────────
+
+.site-footer {
+  background-color: $color-blue-dark;
+  color: rgba(255, 255, 255, 0.85);
+  padding: $spacing-2xl 0 $spacing-lg;
+  margin-top: auto;
+
+  .footer-heading {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $color-white;
+    margin-bottom: $spacing-md;
+  }
+
+  .footer-address {
+    font-style: normal;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .footer-phone a {
+    color: $color-blue-light;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover,
+    &:focus-visible {
+      color: lighten($color-blue-light, 10%);
+      text-decoration: underline;
+    }
+  }
+
+  .footer-legal-links {
+    li {
+      margin-bottom: $spacing-sm;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-blue-light;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: $spacing-xl;
+    padding-top: $spacing-md;
+    text-align: center;
+    font-size: $font-size-sm;
+    color: rgba(255, 255, 255, 0.5);
+
+    p {
+      margin: 0;
+    }
+  }
+}

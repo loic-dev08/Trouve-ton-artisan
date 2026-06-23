@@ -1,0 +1,103 @@
+// ── Header & Navigation ──────────────────────────────
+
+.navbar {
+  background-color: $color-blue-dark;
+  padding: $spacing-md 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  .navbar-brand {
+    padding: 0;
+    &:focus-visible {
+      outline: 3px solid $color-blue-light;
+      outline-offset: 4px;
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    font-size: $font-size-base;
+    padding: $spacing-sm $spacing-md !important;
+    border-radius: $border-radius-sm;
+    transition: color 0.2s, background-color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-white !important;
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    &.active {
+      color: $color-white !important;
+      background-color: $color-blue-light;
+    }
+  }
+
+  // Bouton hamburger
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4);
+    &:focus {
+      box-shadow: 0 0 0 3px $color-blue-light;
+    }
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+  }
+}
+
+// Logo header
+.header-logo {
+  height: 48px;
+  width: auto;
+
+  @media (max-width: $bp-md) {
+    height: 36px;
+  }
+}
+
+// Barre de recherche dans le header
+.search-form {
+  @media (max-width: $bp-lg) {
+    margin-top: $spacing-md;
+    width: 100%;
+  }
+}
+
+.search-input {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: $color-white;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: $color-blue-light;
+    box-shadow: 0 0 0 3px rgba(58, 173, 222, 0.35);
+    color: $color-white;
+  }
+}
+
+.btn-search {
+  background-color: $color-blue-light;
+  color: $color-white;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: $spacing-sm $spacing-md;
+  transition: background-color 0.2s;
+
+  &:hover,
+  &:focus-visible {
+    background-color: darken($color-blue-light, 8%);
+    color: $color-white;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba(58, 173, 222, 0.5);
+  }
+}

@@ -1,0 +1,62 @@
+// =====================================================
+// Variables — Trouve ton artisan
+// Palette Auvergne-Rhône-Alpes
+// =====================================================
+
+// ── Couleurs principales ─────────────────────────────
+$color-blue-dark:   #2D4A6B;   // Bleu marine — titres, header
+$color-blue-medium: #1F6FAE;   // Bleu moyen — liens actifs, accents
+$color-blue-light:  #3AADDE;   // Bleu ciel — CTA, boutons
+$color-white:       #FFFFFF;
+$color-gray-light:  #F4F8FC;   // Fond sections alternées
+$color-gray-mid:    #D1DDE9;   // Bordures
+$color-gray-text:   #5A6E82;   // Texte secondaire
+$color-text:        #1A2B3C;   // Texte principal
+
+// Étoiles
+$color-star-full:   #F5A623;
+$color-star-empty:  #C8D6E0;
+
+// ── Typographie ──────────────────────────────────────
+// La police Graphik n'est pas libre — on utilise une
+// police système similaire (sans-serif géométrique)
+$font-family-base: 'Graphik', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+$font-size-base:  1rem;        // 16px
+$font-size-sm:    0.875rem;    // 14px
+$font-size-lg:    1.125rem;    // 18px
+$font-size-xl:    1.5rem;      // 24px
+$font-size-2xl:   2rem;        // 32px
+$font-size-3xl:   2.75rem;     // 44px
+
+// ── Espacements ──────────────────────────────────────
+$spacing-xs:  0.25rem;
+$spacing-sm:  0.5rem;
+$spacing-md:  1rem;
+$spacing-lg:  1.5rem;
+$spacing-xl:  2.5rem;
+$spacing-2xl: 4rem;
+
+// ── Bordures ─────────────────────────────────────────
+$border-radius-sm:  4px;
+$border-radius-md:  8px;
+$border-radius-lg:  16px;
+$border-radius-xl:  24px;
+
+// ── Ombres ───────────────────────────────────────────
+$shadow-card:  0 2px 12px rgba(45, 74, 107, 0.10);
+$shadow-hover: 0 6px 24px rgba(45, 74, 107, 0.18);
+
+// ── Breakpoints (cohérence avec Bootstrap) ───────────
+$bp-sm:  576px;
+$bp-md:  768px;
+$bp-lg:  992px;
+$bp-xl:  1200px;
+
+// ── Overrides Bootstrap ──────────────────────────────
+$primary:       $color-blue-light;
+$secondary:     $color-blue-dark;
+$body-color:    $color-text;
+$body-bg:       $color-white;
+$border-radius: $border-radius-md;
+$font-family-sans-serif: $font-family-base;

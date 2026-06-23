@@ -1,0 +1,112 @@
+// =====================================================
+// main.scss — Point d'entrée Sass
+// Ordre : variables → Bootstrap → surcharges → composants
+// =====================================================
+
+// 1. Variables personnalisées (avant Bootstrap pour les overrides)
+@use 'variables' as *;
+
+// 2. Bootstrap (via node_modules)
+@use 'bootstrap/scss/bootstrap';
+
+// 3. Composants personnalisés
+@use 'header';
+@use 'footer';
+@use 'home';
+@use 'cards';
+@use 'artisan';
+
+// ── Styles globaux ────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $color-text;
+  background-color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Accessibilité — focus visible
+:focus-visible {
+  outline: 3px solid $color-blue-light;
+  outline-offset: 3px;
+}
+
+// Skip link (accessibilité clavier)
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  background: $color-blue-dark;
+  color: $color-white;
+  padding: $spacing-sm $spacing-md;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// Wrapper principal (pour footer collé en bas)
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Titres de section globaux
+.section-title {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  color: $color-blue-dark;
+
+  @media (min-width: $bp-md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.page-title {
+  font-size: $font-size-2xl;
+  font-weight: 800;
+  color: $color-blue-dark;
+  margin-bottom: $spacing-xl;
+}
+
+// Fil d'Ariane
+.breadcrumb {
+  font-size: $font-size-sm;
+
+  a {
+    color: $color-blue-medium;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  .breadcrumb-item.active {
+    color: $color-gray-text;
+  }
+}
+
+// Réduction des animations si demandé
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
