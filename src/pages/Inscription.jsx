@@ -45,7 +45,7 @@ function valider({ prenom, nom, email, motDePasse, confirmation }) {
 const ROLES = [
   { value: 'particulier',  label: 'Particulier',     icon: '👤', desc: 'Je cherche un professionnel artisan' },
   { value: 'entreprise',   label: 'Entreprise',       icon: '🏢', desc: 'Je gère des prestataires artisans' },
-  { value: 'professionnel',label: 'Professionnel IT', icon: '💻', desc: 'Je propose mes services artisanats' },
+  { value: 'professionnel',label: 'Artisan',          icon: '💻', desc: 'Je propose mes services artisanats' },
 ]
 
 // ── Composant ─────────────────────────────────────────────────

@@ -10,7 +10,7 @@ import styles from '../css/ProfilUtilisateur.module.css'
 const ROLE_LABELS = {
   particulier:  'Particulier',
   entreprise:   'Entreprise',
-  professionnel:'Professionnel IT',
+  professionnel:'Artisan',
   admin:        'Administrateur',
 }
 
