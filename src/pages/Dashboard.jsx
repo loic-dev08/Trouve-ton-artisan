@@ -47,20 +47,20 @@ const STATS_BY_ROLE = {
 
 const ACTIVITY_BY_ROLE = {
   particulier: [
-    { id: 1, icon: '💻', color: 'blue',   titre: 'Demande envoyée à Larry Max', meta: 'Expert réseau & cybersécurité · il y a 2h',   statut: 'En attente' },
-    { id: 2, icon: '✅', color: 'teal',   titre: 'Mission terminée avec Lucie Perrin', meta: 'Administratrice systèmes · il y a 3 jours', statut: 'Terminé' },
-    { id: 3, icon: '💬', color: 'purple', titre: 'Nouveau message de Amélie Chevalier', meta: 'Développeuse React/Node.js · il y a 5 jours', statut: 'En cours' },
+    { id: 1, icon: '💻', color: 'blue',   titre: 'Demande envoyée CM Graphisme', meta: 'Web design · il y a 2h',   statut: 'En attente' },
+    { id: 2, icon: '✅', color: 'teal',   titre: 'Mission terminée avec Mont Blanc Electricité', meta: 'Electricien · il y a 3 jours', statut: 'Terminé' },
+    { id: 3, icon: '💬', color: 'purple', titre: 'Nouveau message de Leala Dennis', meta: 'Coiffeur · il y a 5 jours', statut: 'En cours' },
   ],
   entreprise: [
     { id: 1, icon: '📋', color: 'blue',   titre: 'Nouvelle demande de maintenance', meta: 'Parc informatique · il y a 1h',          statut: 'En attente' },
-    { id: 2, icon: '✅', color: 'teal',   titre: 'Intervention terminée — Lucie Perrin', meta: 'Administration systèmes · hier',     statut: 'Terminé' },
-    { id: 3, icon: '📄', color: 'purple', titre: 'Devis reçu pour refonte du site', meta: 'Amélie Chevalier · il y a 4 jours',       statut: 'En cours' },
+    { id: 2, icon: '✅', color: 'teal',   titre: 'Intervention terminée — Mont Blanc Electricité', meta: 'Electricien · hier',     statut: 'Terminé' },
+    { id: 3, icon: '📄', color: 'purple', titre: 'Devis reçu pour Coiffeur Dennis', meta: 'Leala Dennis · il y a 4 jours',       statut: 'En cours' },
   ],
   professionnel: [
-    { id: 1, icon: '📩', color: 'blue',   titre: 'Nouvelle demande — Sécurisation réseau', meta: 'Particulier · Melun · il y a 1h',   statut: 'En attente' },
-    { id: 2, icon: '✅', color: 'teal',   titre: 'Mission terminée — Configuration serveur', meta: 'DataSolutions SAS · hier',        statut: 'Terminé' },
+    { id: 1, icon: '📩', color: 'blue',   titre: 'Nouvelle demande — Modernisation website', meta: 'Particulier · Valence · il y a 1h',   statut: 'En attente' },
+    { id: 2, icon: '✅', color: 'teal',   titre: 'Mission terminée — Configuration Armoire électrique', meta: 'Mont Blanc Electricité · hier',        statut: 'Terminé' },
     { id: 3, icon: '⭐', color: 'purple', titre: 'Nouvel avis reçu — 5/5', meta: 'Claire Girard · il y a 2 jours',                    statut: 'Terminé' },
-    { id: 4, icon: '📩', color: 'blue',   titre: 'Nouvelle demande — Audit cybersécurité', meta: 'Entreprise · Sens · il y a 3 jours', statut: 'En attente' },
+    { id: 4, icon: '📩', color: 'blue',   titre: 'Nouvelle demande — Devis coiffure', meta: 'Entreprise · Chambéry · il y a 3 jours', statut: 'En attente' },
   ],
   admin: [
     { id: 1, icon: '👤', color: 'blue',   titre: 'Nouveau professionnel inscrit', meta: 'Romain Bernard · il y a 30 min',          statut: 'En attente' },
