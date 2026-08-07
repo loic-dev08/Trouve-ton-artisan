@@ -40,8 +40,8 @@ export default function Navbar() {
             <circle cx="49" cy="35" r="2" fill="#18A87C"/>
           </svg>
           <span className={styles.logoText}>
-            <span className={styles.logoIt}>IT</span>
-            <span className={styles.logoConnect}>Connect</span>
+            <span className={styles.logoIt}>Trouve</span>
+            <span className={styles.logoConnect}>ton Artisan</span>
           </span>
         </NavLink>
 
