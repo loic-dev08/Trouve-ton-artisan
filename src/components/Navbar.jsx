@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import styles from '../css/Navbar.module.css'
+import Logo from '../assets/logo.png'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -25,7 +26,7 @@ export default function Navbar() {
       <nav className={styles.nav} aria-label="Navigation principale">
 
         {/* ── Logo ── */}
-        <NavLink to="/" className={styles.logo} aria-label="ITConnect — Accueil">
+        <NavLink to="/" className={styles.logo} aria-label="Trouve ton Artisan — Accueil">
           <svg width="28" height="28" viewBox="0 0 60 60" aria-hidden="true">
             <rect width="60" height="60" rx="12" fill="#2F7FD8"/>
             <rect x="4" y="4" width="52" height="52" rx="9" fill="#FFFFFF"/>
