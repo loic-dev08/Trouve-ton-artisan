@@ -1,0 +1,289 @@
+/* ── PAGE ── */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #FBF9FF 0%, #F3EEFF 55%, #EEF3FF 100%);
+  color: #2A2440;
+  font-family: 'Inter', system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+/* ── CARTE FORMULAIRE ── */
+.card {
+  background: #FFFFFF;
+  border: 1px solid rgba(140,90,230,0.15);
+  border-radius: 20px;
+  padding: 40px 40px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 4px 24px rgba(80,50,160,0.08);
+}
+
+/* ── EN-TÊTE ── */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+
+.logoIt {
+  font-size: 22px;
+  font-weight: 700;
+  color: #211A3D;
+}
+
+.logoConnect {
+  font-size: 22px;
+  font-weight: 300;
+  color: #7A45E0;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #211A3D;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6A5F8A;
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+/* ── FORMULAIRE ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3A2E60;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 11px 12px 11px 38px;
+  background: #FAFAFE;
+  border: 1px solid rgba(140,90,230,0.25);
+  border-radius: 10px;
+  color: #2A2440;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.input::placeholder {
+  color: #9A8FBD;
+}
+
+.input:focus {
+  border-color: #7A45E0;
+  box-shadow: 0 0 0 3px rgba(122,69,224,0.1);
+}
+
+.inputError {
+  border-color: #C03C3C;
+  box-shadow: 0 0 0 3px rgba(192,60,60,0.08);
+}
+
+/* Bouton afficher/masquer mot de passe */
+.eyeBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #9A8FBD;
+  padding: 0;
+  line-height: 1;
+}
+
+/* ── MESSAGES D'ERREUR ── */
+.errorMsg {
+  font-size: 12px;
+  color: #C03C3C;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── ERREUR GLOBALE (bannière) ── */
+.errorBanner {
+  background: rgba(192,60,60,0.08);
+  border: 1px solid rgba(192,60,60,0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #C03C3C;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── SUCCÈS (bannière) ── */
+.successBanner {
+  background: rgba(20,170,120,0.08);
+  border: 1px solid rgba(20,170,120,0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #18A87C;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── BOUTON SUBMIT ── */
+.submitBtn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #6B44E9, #2F7FD8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 4px;
+  transition: opacity .15s;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── SÉPARATEUR ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0;
+  color: #9A8FBD;
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(140,90,230,0.15);
+}
+
+/* ── LIEN SWITCH (Connexion ↔ Inscription) ── */
+.switchText {
+  text-align: center;
+  font-size: 13px;
+  color: #6A5F8A;
+  margin: 0;
+}
+
+.switchLink {
+  color: #7A45E0;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-family: inherit;
+  padding: 0;
+}
+
+.switchLink:hover {
+  text-decoration: underline;
+}
+
+/* ── MOT DE PASSE OUBLIÉ ── */
+.forgotLink {
+  font-size: 12px;
+  color: #7A45E0;
+  text-decoration: none;
+  text-align: right;
+  display: block;
+  margin-top: -8px;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+/* ── INDICATEUR CHARGEMENT ── */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .6s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media (max-width: 640px) {
+  .card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .main {
+    padding: 24px 16px;
+    align-items: flex-start;
+  }
+}

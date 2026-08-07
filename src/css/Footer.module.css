@@ -1,0 +1,38 @@
+.footer {
+  background: #F7F4FD;
+  border-top: 1px solid rgba(140,90,230,0.15);
+  padding: 32px 24px;
+  text-align: center;
+  color: #9A8FBD;
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+}
+
+.logo {
+  margin-bottom: 8px;
+}
+
+.logoIt {
+  color: #211A3D;
+  font-weight: 700;
+}
+
+.logoConnect {
+  color: #7A45E0;
+  font-weight: 300;
+}
+
+.copyright {
+  margin: 0;
+}
+
+.tagline {
+  margin: 6px 0 0;
+  font-size: 11px;
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 24px 16px;
+  }
+}

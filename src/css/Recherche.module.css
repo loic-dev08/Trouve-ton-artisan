@@ -1,0 +1,465 @@
+/* ── PAGE ── */
+.page {
+  min-height: 100vh;
+  background: #F7F4FD;
+  color: #2A2440;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.container {
+  max-width: 1669px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+/* ── EN-TÊTE ── */
+.headerRow {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #211A3D;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6A5F8A;
+  margin: 0;
+}
+
+/* ── BARRE DE RECHERCHE ── */
+.searchBarWrapper {
+  background: #FFFFFF;
+  border: 1px solid rgba(140,90,230,0.15);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(80,50,160,0.05);
+}
+
+/* ── FILTRES AVANCÉS ── */
+.filtersRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 160px;
+}
+
+.filterLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #847AA8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.filterSelect {
+  padding: 9px 12px;
+  background: #FFFFFF;
+  border: 1px solid rgba(140,90,230,0.25);
+  border-radius: 10px;
+  color: #2A2440;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A45E0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.filterSelect:focus {
+  border-color: #7A45E0;
+  box-shadow: 0 0 0 3px rgba(122,69,224,0.1);
+}
+
+.resetFiltersBtn {
+  padding: 9px 16px;
+  background: transparent;
+  color: #7A45E0;
+  border: 1px solid rgba(122,69,224,0.3);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  align-self: flex-end;
+  transition: background .15s;
+}
+
+.resetFiltersBtn:hover {
+  background: rgba(122,69,224,0.06);
+}
+
+/* ── BARRE RÉSULTATS + VUE ── */
+.resultsBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.resultsCount {
+  font-size: 14px;
+  color: #6A5F8A;
+  font-weight: 500;
+}
+
+.resultsCount strong {
+  color: #211A3D;
+}
+
+.viewToggle {
+  display: flex;
+  gap: 4px;
+  background: #FFFFFF;
+  border: 1px solid rgba(140,90,230,0.2);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.viewBtn {
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  color: #9A8FBD;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all .15s;
+  line-height: 1;
+}
+
+.viewBtnActive {
+  background: linear-gradient(135deg, #6B44E9, #2F7FD8);
+  color: #FFFFFF;
+}
+
+/* ── VUE GRILLE ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* ── CARTE GRILLE ── */
+.proCard {
+  background: #FFFFFF;
+  border: 1px solid rgba(140,90,230,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(80,50,160,0.05);
+  text-decoration: none;
+  color: inherit;
+}
+
+.proCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(80,50,160,0.1);
+}
+
+.proCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2F7FD8, #7A45E0);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.dispoBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.dispoOn {
+  background: rgba(20,170,120,0.12);
+  color: #18A87C;
+}
+
+.dispoOff {
+  background: rgba(120,120,120,0.1);
+  color: #888;
+}
+
+.proName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #211A3D;
+  margin: 0;
+}
+
+.proSpec {
+  font-size: 12px;
+  color: #6A5F8A;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.proVille {
+  font-size: 12px;
+  color: #2F7FD8;
+  margin: 0;
+}
+
+.proFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.proNote {
+  font-size: 12px;
+  color: #6A5F8A;
+  font-weight: 500;
+}
+
+.starFilled { color: #C07000; font-size: 13px; }
+.starEmpty  { color: #E0DAEE; font-size: 13px; }
+
+.proAvis {
+  font-size: 11px;
+  color: #9A8FBD;
+}
+
+.contactBtn {
+  width: 100%;
+  padding: 9px;
+  background: linear-gradient(135deg, #6B44E9, #2F7FD8);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 4px;
+  transition: opacity .15s;
+}
+
+.contactBtn:hover {
+  opacity: 0.9;
+}
+
+/* ── VUE LISTE ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.proRow {
+  background: #FFFFFF;
+  border: 1px solid rgba(140,90,230,0.15);
+  border-radius: 14px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: box-shadow .15s;
+  box-shadow: 0 1px 3px rgba(80,50,160,0.05);
+  text-decoration: none;
+  color: inherit;
+}
+
+.proRow:hover {
+  box-shadow: 0 4px 16px rgba(80,50,160,0.1);
+}
+
+.proRowBody {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.proRowName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #211A3D;
+  margin: 0 0 2px;
+}
+
+.proRowSpec {
+  font-size: 13px;
+  color: #6A5F8A;
+  margin: 0;
+}
+
+.proRowMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.proRowNote {
+  font-size: 13px;
+  font-weight: 600;
+  color: #211A3D;
+}
+
+.proRowAvis {
+  font-size: 11px;
+  color: #9A8FBD;
+}
+
+.proRowActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.contactBtnSm {
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #6B44E9, #2F7FD8);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+
+.contactBtnSm:hover {
+  opacity: 0.9;
+}
+
+/* ── ÉTAT VIDE ── */
+.emptyState {
+  text-align: center;
+  padding: 80px 24px;
+  color: #9A8FBD;
+}
+
+.emptyIcon {
+  font-size: 44px;
+  margin-bottom: 16px;
+}
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6A5F8A;
+  margin: 0 0 8px;
+}
+
+.emptyText {
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+.emptyBtn {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #6B44E9, #2F7FD8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — TABLETTE (≤ 1024px)
+   ══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .proRowBody {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .proRowMeta:last-child {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 640px)
+   ══════════════════════════════════════ */
+@media (max-width: 640px) {
+  .container {
+    padding: 20px 16px 48px;
+  }
+
+  .searchBarWrapper {
+    padding: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filtersRow {
+    gap: 10px;
+  }
+
+  .filterGroup {
+    flex: 1 1 140px;
+  }
+
+  .proRow {
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .proRowBody {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .proRowActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .viewToggle {
+    display: none;
+  }
+}
