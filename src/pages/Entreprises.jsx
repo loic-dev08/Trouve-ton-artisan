@@ -38,7 +38,7 @@ export default function Entreprises() {
 
         <div className={styles.headerRow}>
           <h1 className={styles.title}>Entreprises partenaires</h1>
-          <p className={styles.subtitle}>Découvrez les entreprises qui font confiance à ITConnect</p>
+          <p className={styles.subtitle}>Découvrez les entreprises qui font confiance à Trouve ton Artisan</p>
         </div>
 
         <div className={styles.filtersRow}>

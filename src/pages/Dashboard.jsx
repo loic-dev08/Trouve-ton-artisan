@@ -14,7 +14,7 @@ const FAKE_USER = {
 const ROLE_LABELS = {
   particulier: 'Particulier',
   entreprise: 'Entreprise',
-  professionnel: 'Professionnel IT',
+  professionnel: 'Artisan',
   admin: 'Administrateur',
 }
 
@@ -144,7 +144,7 @@ const role = user?.role || 'particulier'
         <div className={styles.headerRow}>
           <div>
             <h1 className={styles.welcome}>Bonjour {user.prenom} 👋</h1>
-            <p className={styles.welcomeSub}>Voici un aperçu de votre activité sur ITConnect</p>
+            <p className={styles.welcomeSub}>Voici un aperçu de votre activité sur Trouve ton Artisan</p>
           </div>
           <span className={styles.roleBadge}>{ROLE_LABELS[role]}</span>
         </div>
