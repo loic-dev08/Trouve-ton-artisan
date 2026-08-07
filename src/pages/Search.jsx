@@ -10,25 +10,38 @@ import styles from '../css/Recherche.module.css'
 
 const SPECIALITES = [
   'Toutes les spécialités',
-  'Réseau & Cybersécurité',
-  'Administration Systèmes',
-  'Développement React/Node',
-  'Développement Web',
-  'Développement Mobile',
-  'UX Design & Intégration',
-  'Data Science & IA',
-  'Cloud & DevOps',
-  'Support & Dépannage',
+  'Boucher',
+  'Boulanger',
+  'Chocolatier',
+  'Traiteur',
+  'Chauffagiste',
+  'Electricien',
+  'Menuisier',
+  'Plombier',
+  'Bijoutier',
+  'Couturier',
+  'Ferronier',
+  'Coiffeur',
+  'Fleuriste',
+  'Toiletteur',
+  'Webdesign',
 ]
 
 const VILLES = [
   'Toutes les villes',
-  'Melun',
-  'Montereau',
-  'Sens',
-  'Auxerre',
-  'Montpellier',
-  'Paris',
+  'Kyon',
+  'Montélimar',
+  'Evian',
+  'Chamonix',
+  'Bourg-en-Bresse',
+  'Vienne',
+  'Aix-les-Bains',
+  'Le Puy-en-Velay',
+  'Saint-Priest',
+  'Chambéry',
+  'Romans-sur-Isère',
+  'Annonay',
+  'Valence',
 ]
 
 const NOTES_MIN = [
@@ -144,8 +157,8 @@ export default function Recherche() {
       <div className={styles.container}>
 
         <div className={styles.headerRow}>
-          <h1 className={styles.title}>Rechercher un professionnel IT</h1>
-          <p className={styles.subtitle}>Trouvez l'expert qu'il vous faut parmi nos professionnels vérifiés</p>
+          <h1 className={styles.title}>Rechercher un artisan</h1>
+          <p className={styles.subtitle}>Trouvez l'artisan qu'il vous faut parmi nos professionnels vérifiés</p>
         </div>
 
         <div className={styles.searchBarWrapper}>
@@ -247,7 +260,7 @@ export default function Recherche() {
         ) : prosFiltres.length === 0 ? (
           <div className={styles.emptyState}>
             <div className={styles.emptyIcon}>🔍</div>
-            <p className={styles.emptyTitle}>Aucun professionnel trouvé</p>
+            <p className={styles.emptyTitle}>Aucun artisan trouvé</p>
             <p className={styles.emptyText}>
               Essayez d'élargir vos critères de recherche ou de modifier les filtres.
             </p>
