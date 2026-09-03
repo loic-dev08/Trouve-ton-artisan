@@ -1,6 +1,5 @@
 //src/Navbar.jsx/
-
-import stles from './Navbar.module.css';
+import "./Navbar.scss";
 
 export default function Navbar() { 
     return (
