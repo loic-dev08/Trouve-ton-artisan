@@ -1,6 +1,6 @@
 //src/component/Footer.jsx
 import { Link } from "react-router-dom";
-import styles from './Footer.module.css';
+import "./Footer.scss";
 
 const lienslégaux = [
   { to: "/mentions-legales", label: "Mentions légales" },
