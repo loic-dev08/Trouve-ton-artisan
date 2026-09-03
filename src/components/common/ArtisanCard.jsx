@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Etoiles from"../components/Etoiles";
+import Etoiles from"../Etoiles";
 import { getCategorieOfArtisan, getSpecialite } from "../../data/mockData";
 import "./ArtisanCard.scss";
 
