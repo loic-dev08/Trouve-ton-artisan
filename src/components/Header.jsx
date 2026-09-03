@@ -20,7 +20,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container-app d-flex align-items-center justify-content-between py-2 px-3 px-md-4">
         <Link to="/" className="site-header__logo" aria-label="Trouve ton artisan — retour à l'accueil">
-          <img src="/img/logo-trouve-ton-artisan.svg" alt="" width="44" height="44" />
+          <img src="assets/images/logo-trouve-ton-artisan.png" alt="" width="44" height="44" />
           Trouve ton artisan
         </Link>
         <button
