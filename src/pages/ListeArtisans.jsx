@@ -1,6 +1,6 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { artisans, categories, getCategorieBySlug, getCategorieOfArtisan } from "../data/mockData";
+import { getArtisans, getCategories } from "../services/artisans";
 import ArtisanCard from "../components/artisan/ArtisanCard";
 import useMetaBalise from "../hooks/useMetaBalise";
 import "./ListeArtisans.scss";
@@ -10,7 +10,35 @@ export default function ListeArtisans() {
   const slugCategorie = searchParams.get("categorie") || "";
   const recherche = searchParams.get("recherche") || "";
 
-  const categorieActive = slugCategorie ? getCategorieBySlug(slugCategorie) : null;
+  const [artisans, setArtisans] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [chargement, setChargement] = useState(true);
+  const [erreur, setErreur] = useState(null);
+
+  useEffect(() => {
+    async function chargerDonnees() {
+      try {
+        setChargement(true);
+        const [donneesArtisans, donneesCategories] = await Promise.all([
+          getArtisans(),
+          getCategories(),
+        ]);
+        setArtisans(donneesArtisans);
+        setCategories(donneesCategories);
+        setErreur(null);
+      } catch (err) {
+        console.error(err);
+        setErreur("Impossible de charger les artisans pour le moment.");
+      } finally {
+        setChargement(false);
+      }
+    }
+    chargerDonnees();
+  }, []);
+
+  const categorieActive = slugCategorie
+    ? categories.find((c) => c.slug === slugCategorie)
+    : null;
 
   useMetaBalise(
     categorieActive ? categorieActive.nom : "Tous les artisans",
@@ -20,14 +48,14 @@ export default function ListeArtisans() {
   const resultats = useMemo(() => {
     return artisans.filter((artisan) => {
       const correspondCategorie = categorieActive
-        ? getCategorieOfArtisan(artisan)?.slug === categorieActive.slug
+        ? artisan.categorie?.slug === categorieActive.slug
         : true;
       const correspondRecherche = recherche
         ? artisan.nom.toLowerCase().includes(recherche.toLowerCase())
         : true;
       return correspondCategorie && correspondRecherche;
     });
-  }, [categorieActive, recherche]);
+  }, [artisans, categorieActive, recherche]);
 
   function changerCategorie(slug) {
     const params = new URLSearchParams(searchParams);
@@ -70,7 +98,11 @@ export default function ListeArtisans() {
           ))}
         </div>
 
-        {resultats.length === 0 ? (
+        {chargement ? (
+          <p>Chargement des artisans...</p>
+        ) : erreur ? (
+          <p className="liste-artisans__vide">{erreur}</p>
+        ) : resultats.length === 0 ? (
           <p className="liste-artisans__vide">
             Aucun artisan ne correspond à votre recherche pour le moment.
           </p>
