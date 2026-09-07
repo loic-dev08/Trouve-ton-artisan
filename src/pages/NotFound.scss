@@ -1,0 +1,33 @@
+@import "../assets/styles/variables";
+
+.not-found {
+  &__image {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    max-width: 50ch;
+    margin: 0 auto 1.75rem;
+    color: rgba($color-ink, 0.75);
+  }
+
+  &__lien {
+    display: inline-block;
+    background: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: $radius-sm;
+    font-weight: $fw-semibold;
+
+    &:hover,
+    &:focus-visible {
+      background: $color-primary-dark;
+      color: $color-white;
+    }
+  }
+}

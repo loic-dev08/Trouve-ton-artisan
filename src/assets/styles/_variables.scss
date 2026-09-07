@@ -1,0 +1,60 @@
+// =====================================================
+// Trouve ton artisan — Design tokens
+// Région Auvergne-Rhône-Alpes
+// =====================================================
+
+// --- Couleurs (charte graphique client) ---
+$color-bg:          #f1f8fc; // fond général, clair et aéré
+$color-primary:      #0074c7; // bleu interactif (liens, boutons, focus)
+$color-primary-dark: #00497c; // bleu institutionnel (header, footer, nav)
+$color-ink:          #384050; // texte principal (ardoise, pas de noir pur)
+$color-accent-red:   #cd2c2e; // alerte, champs requis, catégorie "Alimentation"
+$color-accent-green: #82b864; // succès, disponibilité, catégorie "Fabrication"
+$color-white:        #ffffff;
+
+// Une couleur par catégorie de métier (structure = information)
+$category-colors: (
+  "batiment":     $color-primary-dark,
+  "services":     $color-primary,
+  "fabrication":  $color-accent-green,
+  "alimentation": $color-accent-red,
+);
+
+// --- Typographie ---
+// La région impose "Graphik" sur tous ses supports (cf. brief) : on ne
+// choisit pas de seconde famille, la contrainte du brief EST le parti pris.
+// Fallback vers une géométrique proche en attendant les fichiers de police
+// (Graphik est une police payante non redistribuable ici).
+$font-base: "Graphik", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+$fw-regular: 400;
+$fw-medium:  500;
+$fw-semibold: 600;
+$fw-bold:    700;
+
+// Échelle type (base 16px mobile, rapport ~1.25)
+$fs-sm:   0.875rem;
+$fs-base: 1rem;
+$fs-md:   1.125rem;
+$fs-lg:   1.4rem;
+$fs-xl:   1.75rem;
+$fs-2xl:  2.25rem;
+$fs-3xl:  2.75rem;
+
+// --- Layout ---
+$radius-sm: 4px;
+$radius-md: 8px;
+$border-width: 1px;
+$max-content-width: 1140px;
+
+// Bootstrap overrides (variables consommées par bootstrap/scss)
+$primary:    $color-primary;
+$secondary:  $color-primary-dark;
+$success:    $color-accent-green;
+$danger:     $color-accent-red;
+$body-color: $color-ink;
+$body-bg:    $color-bg;
+$font-family-base: $font-base;
+$border-radius: $radius-sm;
+$link-color: $color-primary;
+$link-hover-color: $color-primary-dark;

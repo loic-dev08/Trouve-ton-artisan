@@ -1,0 +1,147 @@
+@import "../../assets/styles/variables";
+
+.site-header {
+  background: $color-white;
+  border-bottom: $border-width solid rgba($color-primary-dark, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: $color-primary-dark;
+    text-decoration: none;
+    font-weight: $fw-bold;
+    font-size: $fs-md;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  // --- Burger (mobile) ---
+  &__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    padding: 0;
+
+    span {
+      display: block;
+      height: 2px;
+      background: $color-ink;
+      border-radius: 2px;
+    }
+  }
+
+  // --- Panneau nav + recherche ---
+  &__panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: $color-white;
+    border-bottom: $border-width solid rgba($color-primary-dark, 0.12);
+    padding: 1rem 1.25rem 1.5rem;
+
+    &.is-open {
+      display: block;
+    }
+  }
+
+  &__nav {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    a {
+      display: block;
+      padding: 0.6rem 0.25rem;
+      color: $color-ink;
+      text-decoration: none;
+      font-weight: $fw-medium;
+      border-bottom: 2px solid transparent;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-primary-dark;
+        border-bottom-color: $color-primary;
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    border: 1px solid rgba($color-primary-dark, 0.3);
+    border-radius: $radius-md;
+    overflow: hidden;
+
+    input {
+      flex: 1;
+      border: none;
+      padding: 0.6rem 0.85rem;
+      font-family: $font-base;
+      font-size: $fs-base;
+      background: $color-bg;
+      color: $color-ink;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      border: none;
+      background: $color-primary;
+      color: $color-white;
+      width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: $color-primary-dark;
+      }
+    }
+  }
+}
+
+// --- Écrans larges : nav horizontale toujours visible ---
+@media (min-width: 992px) {
+  .site-header {
+    &__burger {
+      display: none;
+    }
+
+    &__panel {
+      display: flex !important;
+      position: static;
+      border: none;
+      padding: 0;
+      align-items: center;
+      gap: 2rem;
+      width: auto;
+    }
+
+    &__nav {
+      flex-direction: row;
+      gap: 1.5rem;
+      margin: 0;
+    }
+
+    &__search {
+      width: 260px;
+    }
+  }
+}

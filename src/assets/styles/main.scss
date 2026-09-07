@@ -1,0 +1,76 @@
+@import "variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// =====================================================
+// Base
+// =====================================================
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-base;
+  color: $color-ink;
+  background-color: $color-bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $fw-semibold;
+  color: $color-primary-dark;
+}
+
+a {
+  text-underline-offset: 2px;
+}
+
+// Accessibilité : focus clavier toujours visible (WCAG 2.1 - 2.4.7)
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid $color-primary;
+  outline-offset: 2px;
+}
+
+// Lien d'évitement (skip link) pour lecteurs d'écran / clavier
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: $color-primary-dark;
+  color: $color-white;
+  padding: 0.75rem 1.25rem;
+  z-index: 2000;
+  border-radius: 0 0 $radius-sm 0;
+
+  &:focus {
+    left: 0;
+  }
+}
+
+// Respecte les préférences de mouvement réduit
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-app {
+  max-width: $max-content-width;
+}
+
+// Bandeau catégorie (utilisé sur les fiches / cartes artisan)
+@each $name, $color in $category-colors {
+  .category-#{$name} {
+    --category-color: #{$color};
+  }
+}

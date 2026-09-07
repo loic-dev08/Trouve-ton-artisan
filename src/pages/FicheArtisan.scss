@@ -1,0 +1,137 @@
+@import "../assets/styles/variables";
+
+.fiche-artisan {
+  &__fil {
+    font-size: $fs-sm;
+    color: rgba($color-ink, 0.65);
+    margin-bottom: 1.5rem;
+
+    a {
+      color: rgba($color-ink, 0.65);
+    }
+  }
+
+  &__entete {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba($color-primary-dark, 0.1);
+    margin-bottom: 2rem;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: $radius-md;
+    border-top: 5px solid var(--category-color, #{$color-primary});
+  }
+
+  &__categorie {
+    color: var(--category-color, #{$color-primary});
+    font-weight: $fw-semibold;
+    margin-bottom: 0.15rem;
+  }
+
+  &__specialite {
+    color: rgba($color-ink, 0.75);
+    margin-bottom: 0.5rem;
+  }
+
+  &__ville {
+    margin: 0.5rem 0;
+  }
+
+  &__site {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  &__contenu {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  &__contact h2,
+  &__contenu > section h2 {
+    margin-bottom: 1rem;
+  }
+
+  &__succes {
+    color: darken($color-accent-green, 12%);
+    font-weight: $fw-medium;
+  }
+}
+
+@media (min-width: 768px) {
+  .fiche-artisan__entete {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .fiche-artisan__contenu {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.champ {
+  margin-bottom: 1.1rem;
+
+  label {
+    display: block;
+    font-weight: $fw-medium;
+    margin-bottom: 0.35rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid rgba($color-primary-dark, 0.3);
+    border-radius: $radius-sm;
+    padding: 0.6rem 0.75rem;
+    font-family: $font-base;
+    font-size: $fs-base;
+    background: $color-white;
+    color: $color-ink;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+
+    &[aria-invalid="true"] {
+      border-color: $color-accent-red;
+    }
+  }
+
+  &__erreur {
+    color: $color-accent-red;
+    font-size: $fs-sm;
+    margin: 0.35rem 0 0;
+  }
+}
+
+.fiche-artisan__contact button[type="submit"] {
+  background: $color-primary;
+  color: $color-white;
+  border: none;
+  border-radius: $radius-sm;
+  padding: 0.7rem 1.5rem;
+  font-weight: $fw-semibold;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-dark;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+.fiche-artisan__statut {
+  margin-top: 1rem;
+}

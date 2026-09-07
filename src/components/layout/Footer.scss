@@ -1,0 +1,56 @@
+@import "../../assets/styles/variables";
+
+.site-footer {
+  background: $color-primary-dark;
+  color: rgba($color-white, 0.9);
+  margin-top: 3rem;
+
+  &__title {
+    font-weight: $fw-semibold;
+    color: $color-white;
+    margin-bottom: 0.75rem;
+  }
+
+  address {
+    font-style: normal;
+    line-height: 1.6;
+
+    a {
+      color: $color-white;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  a {
+    color: rgba($color-white, 0.9);
+    text-decoration: underline;
+    text-decoration-color: rgba($color-white, 0.4);
+
+    &:hover,
+    &:focus-visible {
+      color: $color-white;
+      text-decoration-color: $color-white;
+    }
+  }
+
+  &__baseline {
+    max-width: 32ch;
+    line-height: 1.6;
+  }
+
+  &__copy {
+    margin: 2rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba($color-white, 0.15);
+    font-size: $fs-sm;
+    text-align: center;
+  }
+}

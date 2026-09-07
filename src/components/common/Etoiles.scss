@@ -1,0 +1,22 @@
+@import "../../assets/styles/variables";
+
+.etoiles {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+
+  &__pleine {
+    fill: $color-accent-green;
+  }
+
+  &__vide {
+    fill: rgba($color-ink, 0.2);
+  }
+
+  &__valeur {
+    margin-left: 0.4rem;
+    font-size: $fs-sm;
+    color: $color-ink;
+    font-weight: $fw-medium;
+  }
+}

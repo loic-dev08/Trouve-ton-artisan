@@ -1,0 +1,131 @@
+@import "../assets/styles/variables";
+
+.hero {
+  background: linear-gradient(180deg, $color-bg 0%, $color-white 100%);
+  padding: 2.5rem 0 3rem;
+
+  &__eyebrow {
+    color: $color-primary;
+    font-weight: $fw-semibold;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: $fs-2xl;
+    line-height: 1.15;
+    max-width: 18ch;
+    margin-bottom: 1rem;
+  }
+
+  &__intro {
+    max-width: 60ch;
+    font-size: $fs-md;
+    color: rgba($color-ink, 0.85);
+    margin-bottom: 1.75rem;
+  }
+
+  &__categories {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+
+    a {
+      display: inline-block;
+      padding: 0.65rem 1.1rem;
+      border-radius: $radius-md;
+      background: var(--category-color, #{$color-primary});
+      color: $color-white;
+      text-decoration: none;
+      font-weight: $fw-medium;
+
+      &:hover,
+      &:focus-visible {
+        filter: brightness(0.92);
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: $fs-3xl;
+  }
+}
+
+.etapes {
+  padding: 3rem 0;
+
+  h2 {
+    margin-bottom: 1.75rem;
+  }
+
+  &__liste {
+    list-style: none;
+    counter-reset: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+
+    li {
+      position: relative;
+      padding-left: 3rem;
+    }
+
+    h3 {
+      font-size: $fs-base;
+      margin: 0 0 0.35rem;
+      color: $color-ink;
+    }
+
+    p {
+      margin: 0;
+      color: rgba($color-ink, 0.75);
+    }
+  }
+
+  &__numero {
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 50%;
+    background: $color-primary-dark;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: $fw-bold;
+  }
+}
+
+@media (min-width: 768px) {
+  .etapes__liste {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.artisans-du-mois {
+  padding: 1rem 0 3.5rem;
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  &__grille {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .artisans-du-mois__grille {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

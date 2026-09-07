@@ -1,0 +1,56 @@
+@import "../assets/styles/variables";
+
+.liste-artisans {
+  h1 {
+    margin-bottom: 1.25rem;
+  }
+
+  &__filtres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+
+    button {
+      border: 1px solid rgba($color-primary-dark, 0.25);
+      background: $color-white;
+      color: $color-ink;
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
+      font-size: $fs-sm;
+      font-weight: $fw-medium;
+
+      &.is-active {
+        background: var(--category-color, #{$color-primary-dark});
+        border-color: transparent;
+        color: $color-white;
+      }
+
+      &:hover:not(.is-active) {
+        border-color: $color-primary;
+      }
+    }
+  }
+
+  &__grille {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  &__vide {
+    color: rgba($color-ink, 0.7);
+  }
+}
+
+@media (min-width: 576px) {
+  .liste-artisans__grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .liste-artisans__grille {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
