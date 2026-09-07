@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { categories } from "../../data/mockData";
 import "./Header.scss";
+import logo from "../../assets/img/logo.png";
 
 export default function Header() {
   const [menuOuvert, setMenuOuvert] = useState(false);
@@ -20,7 +21,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container-app d-flex align-items-center justify-content-between py-2 px-3 px-md-4">
         <Link to="/" className="site-header__logo" aria-label="Trouve ton artisan — retour à l'accueil">
-          <img src="/img/logo-trouve-ton-artisan.svg" alt="" width="44" height="44" />
+          <img src={logo} alt="Trouve ton artisan" width="44" height="44" />
           <span>Trouve ton artisan</span>
         </Link>
 
