@@ -4,7 +4,7 @@ import "./ArtisanCard.scss";
 
 export default function ArtisanCard({ artisan }) {
   const categorie = artisan.categorie;
-  const image = artisan.image || "/img/artisans/default.jpg";
+  const image = artisan.image || "/img/artisans/artisan-defaut.png";
 
   return (
     <Link
