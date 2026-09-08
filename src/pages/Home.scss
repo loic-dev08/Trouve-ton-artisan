@@ -1,4 +1,4 @@
-@import "../assets/styles/variables";
+@use "../assets/styles/variables" as *;
 
 .hero {
   background: linear-gradient(180deg, $color-bg 0%, $color-white 100%);

@@ -4,7 +4,6 @@ import "./ArtisanCard.scss";
 
 export default function ArtisanCard({ artisan }) {
   const categorie = artisan.categorie;
-  const image = artisan.image || "/img/artisans/artisan-defaut.png";
 
   return (
     <Link
@@ -12,7 +11,7 @@ export default function ArtisanCard({ artisan }) {
       className={`artisan-card category-${categorie?.slug}`}
     >
       <div className="artisan-card__image">
-        <img src={image} alt="" loading="lazy" />
+        <img src="/img/artisans/artisan-defaut.png" alt="" loading="lazy" />
       </div>
       <div className="artisan-card__body">
         <p className="artisan-card__categorie">{categorie?.nom}</p>

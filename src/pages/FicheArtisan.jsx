@@ -63,7 +63,7 @@ export default function FicheArtisan() {
         </nav>
 
         <div className="fiche-artisan__entete">
-          <img src={artisan.image || "/img/artisans/default.jpg"} alt="" className="fiche-artisan__image" />
+          <img src={artisan.image || "/img/artisans/artisan-defaut.png"} alt="" className="fiche-artisan__image" />
           <div>
             <p className="fiche-artisan__categorie">{categorie?.nom}</p>
             <h1>{artisan.nom}</h1>
