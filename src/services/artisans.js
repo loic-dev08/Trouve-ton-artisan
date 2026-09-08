@@ -5,6 +5,11 @@ export async function getArtisans(params = {}) {
   return data;
 }
 
+export async function getArtisanById(id) {
+  const { data } = await api.get(`/artisans/${id}`);
+  return data;
+}
+
 export async function getCategories() {
   const { data } = await api.get("/categories");
   return data;

@@ -1,20 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { artisans, getCategorieOfArtisan, getSpecialite } from "../data/mockData";
+import { getArtisanById } from "../services/artisans";
 import Etoiles from "../components/common/Etoiles";
 import useMetaBalise from "../hooks/useMetaBalise";
 import "./FicheArtisan.scss";
 
 export default function FicheArtisan() {
   const { id } = useParams();
-  const artisan = artisans.find((a) => String(a.id) === id);
+  const [artisan, setArtisan] = useState(null);
+  const [chargement, setChargement] = useState(true);
+  const [introuvable, setIntrouvable] = useState(false);
+
+  useEffect(() => {
+    async function chargerArtisan() {
+      try {
+        setChargement(true);
+        setIntrouvable(false);
+        const donnees = await getArtisanById(id);
+        setArtisan(donnees);
+      } catch (err) {
+        console.error(err);
+        setIntrouvable(true);
+      } finally {
+        setChargement(false);
+      }
+    }
+    chargerArtisan();
+  }, [id]);
 
   useMetaBalise(
     artisan ? artisan.nom : "Artisan introuvable",
     artisan ? artisan.aPropos : "Cette fiche artisan n'existe pas."
   );
 
-  if (!artisan) {
+  if (chargement) {
+    return (
+      <section className="container-app px-3 px-md-4 py-5">
+        <p>Chargement...</p>
+      </section>
+    );
+  }
+
+  if (introuvable || !artisan) {
     return (
       <section className="container-app px-3 px-md-4 py-5">
         <h1>Artisan introuvable</h1>
@@ -25,8 +52,7 @@ export default function FicheArtisan() {
     );
   }
 
-  const categorie = getCategorieOfArtisan(artisan);
-  const specialite = getSpecialite(artisan.specialiteId);
+  const categorie = artisan.categorie;
 
   return (
     <article className={`fiche-artisan category-${categorie?.slug}`}>
@@ -37,11 +63,11 @@ export default function FicheArtisan() {
         </nav>
 
         <div className="fiche-artisan__entete">
-          <img src={artisan.image} alt="" className="fiche-artisan__image" />
+          <img src={artisan.image || "/img/artisans/default.jpg"} alt="" className="fiche-artisan__image" />
           <div>
             <p className="fiche-artisan__categorie">{categorie?.nom}</p>
             <h1>{artisan.nom}</h1>
-            <p className="fiche-artisan__specialite">{specialite?.nom}</p>
+            <p className="fiche-artisan__specialite">{artisan.specialite}</p>
             <Etoiles note={artisan.note} />
             <p className="fiche-artisan__ville">{artisan.ville}</p>
             {artisan.siteWeb && (
@@ -95,7 +121,7 @@ function FormulaireContact({ artisan }) {
 
     setStatut("envoi");
     try {
-      // À brancher sur l'API : POST /api/artisans/:id/contact
+      // À brancher sur l'API : POST /api/artisans/:id/contact (pas encore créée côté backend)
       // await fetch(`/api/artisans/${artisan.id}/contact`, { method: "POST", body: JSON.stringify(champs), headers: {...} })
       await new Promise((resolve) => setTimeout(resolve, 600));
       setStatut("succes");

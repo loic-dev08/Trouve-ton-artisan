@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { categories, artisans } from "../data/mockData";
+import { getArtisans, getCategories } from "../services/artisans";
 import ArtisanCard from "../components/artisan/ArtisanCard";
 import useMetaBalise from "../hooks/useMetaBalise";
 import "./Home.scss";
@@ -32,7 +33,29 @@ export default function Home() {
     "Accueil",
     "Trouvez un artisan de la région Auvergne-Rhône-Alpes en quelques clics : bâtiment, services, fabrication, alimentation."
   );
-  const artisansDuMois = artisans.filter((a) => a.artisanDuMois).slice(0, 3);
+
+  const [categories, setCategories] = useState([]);
+  const [artisansDuMois, setArtisansDuMois] = useState([]);
+  const [chargement, setChargement] = useState(true);
+
+  useEffect(() => {
+    async function chargerDonnees() {
+      try {
+        setChargement(true);
+        const [donneesCategories, donneesArtisansTop] = await Promise.all([
+          getCategories(),
+          getArtisans({ top: true }),
+        ]);
+        setCategories(donneesCategories);
+        setArtisansDuMois(donneesArtisansTop.slice(0, 3));
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setChargement(false);
+      }
+    }
+    chargerDonnees();
+  }, []);
 
   return (
     <>
@@ -77,11 +100,15 @@ export default function Home() {
       <section className="artisans-du-mois" aria-labelledby="artisans-mois-titre">
         <div className="container-app px-3 px-md-4">
           <h2 id="artisans-mois-titre">Les artisans du mois</h2>
-          <div className="artisans-du-mois__grille">
-            {artisansDuMois.map((artisan) => (
-              <ArtisanCard key={artisan.id} artisan={artisan} />
-            ))}
-          </div>
+          {chargement ? (
+            <p>Chargement...</p>
+          ) : (
+            <div className="artisans-du-mois__grille">
+              {artisansDuMois.map((artisan) => (
+                <ArtisanCard key={artisan.id} artisan={artisan} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>

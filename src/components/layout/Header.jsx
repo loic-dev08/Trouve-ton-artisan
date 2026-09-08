@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { categories } from "../../data/mockData";
+import { getCategories } from "../../services/artisans";
 import "./Header.scss";
 import logo from "../../assets/img/logo.png";
 
 export default function Header() {
   const [menuOuvert, setMenuOuvert] = useState(false);
   const [recherche, setRecherche] = useState("");
+  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    getCategories()
+      .then(setCategories)
+      .catch((err) => console.error(err));
+  }, []);
 
   function soumettreRecherche(e) {
     e.preventDefault();
