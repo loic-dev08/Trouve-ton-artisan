@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getCategories } from "../../services/artisans";
 import "./Header.scss";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/trouve-ton-artisan.png";
 
 export default function Header() {
   const [menuOuvert, setMenuOuvert] = useState(false);
